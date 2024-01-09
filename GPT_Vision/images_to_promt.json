@@ -1,9 +1,9 @@
-{
-
-    
+{ 
+  "Images": {
     "image1": "https://www.chio-lecca.edu.pe/cdn/shop/articles/chio-lecca-blog-estilo-y-moda.jpg?v=1673918894",
-    "image2": "https://media.revistagq.com/photos/5f7f1e8178c4dd5b8fdf255b/4:3/w_1920,h_1440,c_limit/gucci-reventa-segunda-mano.jpg"
-
-
+    "image2": "https://media.revistagq.com/photos/5f7f1e8178c4dd5b8fdf255b/4:3/w_1920,h_1440,c_limit/gucci-reventa-segunda-mano.jpg",
+    "image3": "https://www.lecturas.com/medio/2023/10/03/laura-matamoros-con-botas-de-zara_ead8d60c_231003091934_1200x1736.jpg"
+  },
+  "Machine_prompt": "Eres el mejor analista de datos experto en moda, diseño marcas de moda y telas, cuando ves una imagen describes lo que ves desde los ojos de un experto en moda, diseño marcas de moda y telas."
 
 }
