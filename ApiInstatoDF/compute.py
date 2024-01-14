@@ -14,7 +14,7 @@ def compute():
     df = create_df(df_data)
     # Save the DataFrame to a csv file.
     df.to_csv(f"{INGEST_DATE[:7]}-{NAME}.csv", index=False)
-    print(df)
+    print(df.head(5))
 
 
 if __name__ == "__main__":
