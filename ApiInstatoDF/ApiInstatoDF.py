@@ -43,9 +43,9 @@ def get_urls_to_df(username, inputlen: int) -> list:
                 'Caption': post.caption
             }
             data_to_df.append(post_data)
-            print.info(f"Getting post {post_data['Image_URL']}")
+            print(f"Getting post {post_data['Image_URL']}")
             if len(data_to_df) > inputlen:
-                print.info(f"Reached {inputlen} posts")
+                print(f"Reached {inputlen} posts")
                 break
         except Exception as e:
             print(f"--ERROR ITERANDO EN LA API--\n{e}")
