@@ -5,13 +5,6 @@ import os
 from dotenv import load_dotenv
 from utils import load_gpt_files, save_gpt_response_txt, initialize_openai
 
-# def initialize_openai():
-#     load_dotenv()
-#     OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
-#     OpenAI.api_key = OPENAI_API_KEY
-#     return OpenAI(api_key=OPENAI_API_KEY)
-
-
 
 def get_image_responses(client, image_descipcion_prompt, IMAGES: dict, _ROOT: str) -> list:
     responses_to_df = []
@@ -72,4 +65,4 @@ def lambda_handler(event, context):
         'body': f"CSV file '{csv_filename}' created successfully."
     }
 
-# lambda_handler(None, None)
+lambda_handler(None, None)
