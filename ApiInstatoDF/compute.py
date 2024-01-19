@@ -1,8 +1,11 @@
 #### ---- IMPORTS ---- ####
 from ApiInstatoDF import get_urls_to_df, create_df, INGEST_DATE
+from pathlib import Path
+
+#### ---- GLOBAL VARIABLES ---- ####
+_EXPORT_PATH = Path(__file__).parent / "data"
 
 ### ---- MAIN COMPUTE FUNCION ---- ###
-
 
 def compute():
     """
@@ -13,7 +16,7 @@ def compute():
     df_data = get_urls_to_df(NAME, LEN)
     df = create_df(df_data)
     # Save the DataFrame to a csv file.
-    df.to_csv(f"{INGEST_DATE[:7]}-{NAME}.csv", index=False)
+    df.to_csv(f"{_EXPORT_PATH/INGEST_DATE[:7]}-{NAME}.csv", index=False)
     print(df.head(5))
 
 
