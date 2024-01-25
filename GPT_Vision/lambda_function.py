@@ -3,7 +3,12 @@ from openai import OpenAI
 from pathlib import Path
 import os
 from dotenv import load_dotenv
-from utils import load_gpt_files, save_gpt_response_txt, initialize_openai
+import sys
+# Obtén la ruta del directorio principal de tu proyecto
+# project_path = "/Users/davidmolla/Data/Formacion/MBIT School/00 TFM/TrendAi_repo"
+# sys.path.append(project_path)
+from common.utils import load_gpt_files, initialize_openai, save_gpt_response_txt # FIX: import from common.utils  
+
 
 
 def get_image_responses(client, image_descipcion_prompt, IMAGES: dict, _ROOT: str) -> list:

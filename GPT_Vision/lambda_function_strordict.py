@@ -1,6 +1,6 @@
 import pandas as pd
 from pathlib import Path
-from utils import load_gpt_files, save_gpt_response_txt, initialize_openai
+from common.utils import load_gpt_files, save_gpt_response_txt, initialize_openai
 
 
 def create_chat_response(client, image_descipcion_prompt, image_url, machine_prompt):

@@ -32,7 +32,7 @@ response = client.chat.completions.create(
         {
           "type": "image_url",
           "image_url": {
-            "url": IMAGES["Images"]["image3"],
+            "url": IMAGES["Images"]["image4"],
             "detail": "low" # "low" or "high" // TODO: Comprobar gasto de tokens  y si es necesario
           },
      
