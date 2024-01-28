@@ -42,8 +42,8 @@ def save_gpt_response_txt(code_bucket: str, response: str):
         #     with open (f"{_ROOT}/image_responses/image_response_{_TODAY}.txt", "w") as text_file:
         # text_file.write(choice.message.content)
 
-def connect_to_s3(_ROOT: str):
-    def openboto3keys(_ROOT: str, json_file: str = "boto3keys.local.json"):
+def connect_to_s3(_ROOT: str, json_file: str = "boto3keys.local.json"):
+    def openboto3keys(_ROOT: str) -> dict:
         with open(f"{_ROOT}/{json_file}", "r") as f:
             return json.load(f)
     boto3keys = openboto3keys(_ROOT)
