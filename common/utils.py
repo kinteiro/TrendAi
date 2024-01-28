@@ -7,6 +7,7 @@ from openai import OpenAI
 from pathlib import Path
 import os
 from dotenv import load_dotenv
+import boto3
 load_dotenv()
 _TODAY = pd.Timestamp.today().strftime("%Y_%m_%d_%H_%M")
 
@@ -40,3 +41,16 @@ def save_gpt_response_txt(code_bucket: str, response: str):
 
         #     with open (f"{_ROOT}/image_responses/image_response_{_TODAY}.txt", "w") as text_file:
         # text_file.write(choice.message.content)
+
+def connect_to_s3(_ROOT: str):
+    def openboto3keys(_ROOT: str, json_file: str = "boto3keys.local.json"):
+        with open(f"{_ROOT}/{json_file}", "r") as f:
+            return json.load(f)
+    boto3keys = openboto3keys(_ROOT)
+    session = boto3.session.Session(**boto3keys)
+    s3 = session.client('s3')
+    return s3
+
+
+def upload_to_s3(s3, BUCKET_NAME: str, df: pd.DataFrame, key: str):
+    s3.put_object(Bucket=BUCKET_NAME, Key=key, Body=df.to_csv(index=False))
