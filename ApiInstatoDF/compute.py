@@ -1,9 +1,18 @@
+import sys
+sys.path.append('/Users/davidmolla/Data/Formacion/MBIT School/00 TFM/TrendAi_repo')
 #### ---- IMPORTS ---- ####
-from ApiInstatoDF import get_urls_to_df, create_df, INGEST_DATE
 from pathlib import Path
+
+from ApiInstatoDF import INGEST_DATE, create_df, get_urls_to_df  
+
+# from common.utils import connect_to_s3, upload_to_s3
+from common.utils import connect_to_s3, upload_to_s3
 
 #### ---- GLOBAL VARIABLES ---- ####
 _EXPORT_PATH = Path(__file__).parent / "data"
+BUCKET_NAME = 'trendai-bucket-01'
+_ROOT = Path(__file__).parent.parent
+s3 = connect_to_s3(_ROOT, json_file="boto3keys.local.json")
 
 ### ---- MAIN COMPUTE FUNCION ---- ###
 
@@ -17,6 +26,13 @@ def compute():
     df = create_df(df_data)
     # Save the DataFrame to a csv file.
     df.to_csv(f"{_EXPORT_PATH/INGEST_DATE[:7]}-{NAME}.csv", index=False)
+    # Upload the DataFrame to S3.
+    try:
+        upload_to_s3(s3, BUCKET_NAME, df, f"{INGEST_DATE[:7]}-{NAME}.csv")
+    except Exception as e:
+        print(f"--ERROR UPLOADING TO S3--\n{e}")
+    
+
     print(df.head(5))
 
 
