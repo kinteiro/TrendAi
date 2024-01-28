@@ -1,12 +1,12 @@
 import sys
 sys.path.append('/Users/davidmolla/Data/Formacion/MBIT School/00 TFM/TrendAi_repo')
 #### ---- IMPORTS ---- ####
-from pathlib import Path
+from pathlib import Path  # noqa: E402
 
-from ApiInstatoDF import INGEST_DATE, create_df, get_urls_to_df  
+from ApiInstatoDF import INGEST_DATE, create_df, get_urls_to_df    # noqa: E402
 
 # from common.utils import connect_to_s3, upload_to_s3
-from common.utils import connect_to_s3, upload_to_s3
+from common.utils import connect_to_s3, upload_to_s3  # noqa: E402
 
 #### ---- GLOBAL VARIABLES ---- ####
 _EXPORT_PATH = Path(__file__).parent / "data"
