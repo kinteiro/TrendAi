@@ -1,1 +1,13 @@
-Por favor, proporciona una descripción detallada de la imagen de moda que estás observando. Presta especial atención a los elementos de moda presentes, como el tipo de ropa, patrones, texturas y colores. Si puedes identificar referencias a alguna época, tendencia o diseñador específico, por favor, inclúyelos en tu descripción. Sé lo más detallado y específico posible para capturar la esencia visual de la moda en la imagen. ¡Gracias!
+Analiza detalladamente cada imagen, iniciando con el análisis del color de la prenda. Describe minuciosamente cada tono y matiz, examinando la interacción y complementación entre ellos. Asegúrate de destacar el impacto visual de la paleta de colores, evaluando su relevancia estacional y su contribución al estilo general.
+
+Luego, dirige tu atención al corte de la prenda. Analiza su silueta, líneas y ajuste al cuerpo, considerando cómo el corte influye tanto en la funcionalidad como en la estética de la pieza.
+
+Posteriormente, examina el tejido de la prenda con atención a su textura, peso y características particulares. Reflexiona sobre cómo estas cualidades afectan la apariencia y el movimiento de la prenda.
+
+Prosigue analizando las combinaciones de colores y los estampados presentes. Desglosa cómo se armonizan o contrastan los colores y detalla el diseño, escala y colocación de los estampados.
+
+Vincula la prenda con su diseñador, explorando cómo refleja la estética y filosofía del creador. Considera la historia detrás del diseño y su relevancia en las tendencias actuales.
+
+Finalmente, investiga el contexto histórico y la evolución de la tendencia representada en la imagen. Explora si elementos similares han aparecido en otras temporadas o en las colecciones de otros diseñadores, y cómo esta tendencia se ha transformado a lo largo del tiempo.
+
+Si la imagen no muestra modelos, ropa de moda o no es relevante para la pasarela o la moda, la respuesta debe ser simplemente 'NO ES MODA'.
