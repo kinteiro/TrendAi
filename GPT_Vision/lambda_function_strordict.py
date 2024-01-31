@@ -46,12 +46,24 @@ def get_image_responses(client, image_descipcion_prompt, IMAGES, _ROOT: str) -> 
             file.unlink()
 
         for choice in response.choices:
+            if "NO ES MODA" in choice.message.content.upper(): # TODO: ver si hacer continue o usar la funcion tag_if_image_response_isnot_fashion para etiquetar
+                continue
             data = {"timestamp": pd.Timestamp.today().strftime("%Y_%m_%d_%H_%M"),
-                    "image_response": choice.message.content}
+                    "image_response": choice.message.content,
+                    "Fashion_tag": tag_if_image_response_isnot_fashion(choice)}
             responses_to_df.append(data)
             print(choice.message.content[:50])
 
     return responses_to_df
+
+
+def tag_if_image_response_isnot_fashion(choice):
+    if "NO ES MODA" in choice.message.content.upper():
+        return "Imagen no es de moda"
+    elif "YES" in choice.message.content.upper():
+        return "Imagen es de moda"
+    else:
+        return None
 
 def get_df_from_list(list_of_dicts: list) -> pd.DataFrame:
     return pd.DataFrame(list_of_dicts)
