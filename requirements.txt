@@ -8,8 +8,10 @@ pytz==2023.3.post1
 requests==2.31.0
 six==1.16.0
 tzdata==2023.3
-urllib3==2.1.0
+urllib3
 fastparquet==2023.10.1
 python-dotenv==1.0.0
 openai==1.6.1
 boto3
+beautifulsoup4==4.12.3
+selenium==4.17.2
