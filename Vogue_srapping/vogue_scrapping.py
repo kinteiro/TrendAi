@@ -121,14 +121,10 @@ def scrape_images(link, designer_name):
 
 
 def get_temporada(str):
-    if "fall" in str:
+    if "fall" or "winter" in str:
         return "otoño - invierno"
-    elif "spring" in str:
+    elif "spring" or "summer" in str:
         return "primavera - verano"
-    elif "summer" in str:
-        return "primavera - verano"
-    elif "winter" in str:
-        return "otoño - invierno"
     else:
         return "otro"
 
