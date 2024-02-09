@@ -12,18 +12,16 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import NoSuchElementException
 import sys
 
-# project_path = Path.cwd() / "Vogue_srapping"
-# sys.path.append(project_path)
 # ---- Variables ----
 chrome_options = Options()
 # chrome_options.add_argument('--headless')
-# driver = webdriver.Chrome(options=chrome_options)
-
-# main_url = 'https://www.vogue.com/fashion-shows/seasons'
-main_url = 'https://www.vogue.com/fashion-shows/latest-shows'
+vogue_url = 'https://www.vogue.com'
+# main_url = 'https://www.vogue.com/fashion-shows/seasons' # Para obtener todas las temporadas
+main_url = 'https://www.vogue.com/fashion-shows/latest-shows' # Para obtener los últimos desfiles
 designer_dict = {}
 year = str(datetime.now().year)
 fecha_scrapped = datetime.now().strftime("%Y_%m_%d_%H_%M_%S")
+path = Path.cwd() / "Vogue_srapping/"
 
 
 # ---- Funciones ----
@@ -48,12 +46,32 @@ def get_all_urls(soup):
     enlaces = soup.find_all('a')
     return enlaces
 
+
+def save_links_to_txt(enlaces, not_included):
+    with open(f"{fecha_scrapped}_vogue_enlaces.txt", "w") as file:
+        for enlace in enlaces:
+            enlace = enlace.get('href')
+            if year and "fashion-shows/" in enlace\
+                and enlace not in not_included and year in enlace:
+                file.write(f"{vogue_url}{enlace}\n")
+
+
+# def get_designer_name(enlace, not_included, scrapped_designers):
+#     enlace = enlace.get('href')
+#     if year and "fashion-shows/" in enlace\
+#             and enlace not in not_included: # TODO: VER si funciona con el string
+#         designer_page = vogue_url+ enlace
+#         designer_name = enlace.split('/')[-1]
+#         return designer_page, designer_name
+
 def scrape_all_page(enlaces, scrapped_designers: list) -> list: 
-    # for enlace in enlaces:
-    for enlace in enlaces[10:]:
+    not_included = ["/fashion-shows/latest-shows", "/fashion-shows/seasons", "/fashion-shows/designers", "/fashion-shows/featured"]
+    # save_links_to_txt(enlaces, not_included)
+    for enlace in enlaces:
         enlace = enlace.get('href')
-        if year in enlace:
-            designer_page = "https://www.vogue.com"+ enlace
+        if year and "fashion-shows/" in enlace\
+                and enlace not in not_included: # TODO: VER si funciona con el string
+            designer_page = vogue_url + enlace
             designer_name = enlace.split('/')[-1]
             if designer_name in scrapped_designers:
                 print(f"El diseñador {designer_name} ya fue descargado. Continuando con el siguiente diseñador.")
@@ -67,14 +85,13 @@ def scrape_all_page(enlaces, scrapped_designers: list) -> list:
                 boton = soup.find_all(class_="RunwayShowPageGalleryCta-fmTQJF FtdcL")
                 # sacar el link de la pagina de imagenes
                 link = boton[0].find('a').get('href')
-                print(f"LIIIIINK: {link}")
                 # scrape_images(link, designer_name)
                 
 
 def scrape_images(link, designer_name):
     if link:
         driver = webdriver.Chrome(options=chrome_options)
-        collection_page = f"https://www.vogue.com{link}"
+        collection_page = vogue_url + link
         driver.get(collection_page)
         try:
             terms_button = driver.find_element('xpath', '//*[@id="onetrust-accept-btn-handler"]')
@@ -163,7 +180,6 @@ def df_to_csv(df):
 
 # ---- Main ----
 def main():
-    path = Path.cwd() / "Vogue_srapping/"
     scrapped_designers = get_scrapped_df_designers(f'{path}/vogue_season_2.csv')
     soup = verify_status_code(main_url)
     enlaces = get_all_urls(soup)
