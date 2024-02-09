@@ -2,6 +2,7 @@ import requests
 from bs4 import BeautifulSoup
 import pandas as pd
 import time
+from pathlib import Path
 from datetime import datetime
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
@@ -9,8 +10,10 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import NoSuchElementException
+import sys
 
-
+# project_path = Path.cwd() / "Vogue_srapping"
+# sys.path.append(project_path)
 # ---- Variables ----
 chrome_options = Options()
 # chrome_options.add_argument('--headless')
@@ -160,7 +163,8 @@ def df_to_csv(df):
 
 # ---- Main ----
 def main():
-    scrapped_designers = get_scrapped_df_designers("vogue_season_2.csv")
+    path = Path.cwd() / "Vogue_srapping/"
+    scrapped_designers = get_scrapped_df_designers(f'{path}/vogue_season_2.csv')
     soup = verify_status_code(main_url)
     enlaces = get_all_urls(soup)
     try:
