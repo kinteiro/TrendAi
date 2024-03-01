@@ -11,11 +11,11 @@ from common.utils import load_gpt_files, initialize_openai, save_gpt_response_tx
 
 
 
-def get_image_responses(client, image_descipcion_prompt, IMAGES: dict, _ROOT: str) -> list:
+def get_image_responses(client, image_descipcion_prompt, IMAGES: dict, _ROOT: str,  DESIGNER, TEMPORADA, YEAR) -> list:
     responses_to_df = []
 
     # for image in IMAGES["Images"].values():
-    for image in IMAGES:
+    for image, designer, temporada, year, ranGE in zip(IMAGES, DESIGNER, TEMPORADA, YEAR, range(len(IMAGES))):
         response = client.chat.completions.create(
             model="gpt-4-vision-preview",
             messages=[
@@ -45,9 +45,10 @@ def get_image_responses(client, image_descipcion_prompt, IMAGES: dict, _ROOT: st
 
         for choice in response.choices:
             data = {"timestamp": pd.Timestamp.today().strftime("%Y_%m_%d_%H_%M"),
-                    "image_response": choice.message.content}
+                    "image_response": choice.message.content,
+                    "url": image}
             responses_to_df.append(data)
-            print(choice.message.content[:50])
+            print(ranGE, choice.message.content[:50])
 
     return responses_to_df
 
@@ -58,11 +59,15 @@ def lambda_handler(event, context):
     _ROOT = Path(__file__).parent
     # client = initialize_openai()
     client = initialize_openai("OPENAI_API_KEY")
-    df = pd.read_csv("vogue_season_2.csv").sample(5)
+    df = pd.read_csv("vogue_season_2_reduced.csv")
     image_descipcion_prompt = load_gpt_files(_ROOT, "txt")
     # IMAGES = load_gpt_files(_ROOT, "json")
     IMAGES = df["url"].tolist()
-    LIST = get_image_responses(client, image_descipcion_prompt, IMAGES, _ROOT)
+    DESIGNER = df["designer"].tolist()
+    TEMPORADA = df["temporada"].tolist()
+    YEAR = df["year"].tolist()
+
+    LIST = get_image_responses(client, image_descipcion_prompt, IMAGES, _ROOT, DESIGNER, TEMPORADA, YEAR)
     df = get_df_from_list(LIST)
 
     csv_filename = f"{_ROOT}/image_responses/image_responses_{pd.Timestamp.today().strftime('%Y_%m_%d_%H_%M')}.csv"
