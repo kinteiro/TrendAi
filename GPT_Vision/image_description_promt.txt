@@ -1,1 +1,30 @@
-Por favor, proporciona una descripción detallada de la imagen de moda que estás observando. Presta especial atención a los elementos de moda presentes, como el tipo de ropa, patrones, texturas y colores. Si puedes identificar referencias a alguna época, tendencia o diseñador específico, por favor, inclúyelos en tu descripción. Sé lo más detallado y específico posible para capturar la esencia visual de la moda en la imagen. ¡Gracias!
+Describe el conjunto de ropa siguiendo este esquema. Adaptate únicsmente a este formato en tu respuesta.
+
+Ropa:
+
+Número de piezas: [Número]
+Prenda principal:
+Tipo: [Tipo de prenda principal]
+Color: [Color principal]
+Material: [Material]
+Categoría: [Categoría]
+Diseño: [Diseño]
+Textura: [Textura]
+Estampado: [Tipo de estampado] (opcional)
+Mangas: [Tipo de manga] (largo, corto, etc.)
+Cuello: [Tipo de cuello] (alto, redondo, etc.)
+Escote: [Tipo de escote] (en V, redondo, etc.)
+Largo: [Largo de la prenda principal] (corto, midi, largo, etc.)
+Detalles: [Lista de detalles separados por comas]
+Otras prendas (opcional):
+[Tipo de prenda]: [Color], [Material], [Diseño], [Largo], [Detalles], [Estampado] (opcional), [Mangas] (opcional), [Cuello] (opcional), [Escote] (opcional)
+[Tipo de prenda]: [Color], [Material], [Diseño], [Largo], [Detalles], [Estampado] (opcional), [Mangas] (opcional), [Cuello] (opcional), [Escote] (opcional)
+Zapatos:
+Tipo: [Tipo de zapato]
+Color: [Color]
+Material: [Material]
+Altura del tacón: [Altura]
+Diseño: [Diseño]
+Accesorios (opcional):
+[Tipo de accesorio]: [Color], [Material], [Estilo]
+[Tipo de accesorio]: [Color], [Material], [Estilo]
