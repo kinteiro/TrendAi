@@ -13,12 +13,10 @@ def main():
         st.image(img, caption='Imagen subida.', use_column_width=True)
 
         # Convertir la imagen a base64
-        img_format = img_file.type.split('/')[1]
         img_b64 = base64.b64encode(img_file.getvalue()).decode()
-
-        # imprimir respuesta de la función
-        # st.text(text_output(img_b64))
-        text = text_output(img_b64)
+        with st.spinner('Cargando texto...'):
+            # Obtener el texto de la imagen usando la API de OpenAI
+            text = text_output(img_b64)
         st.text_area("Texto resultante:", text, height=400)
         return img_b64
 
