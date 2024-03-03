@@ -5,18 +5,15 @@ import os
 from dotenv import load_dotenv
 import base64
 import requests
-
 load_dotenv()
 
 OPENAI_API_KEY =  os.getenv("OPENAI_API_KEY")
-OpenAI.api_key = OPENAI_API_KEY
-_TODAY = pd.Timestamp.today().strftime("%Y_%m_%d_%H_%M")
-gpt_4 = "gpt-4-vision-preview"
+gpt_model = "gpt-4-vision-preview"
 _ROOT = Path(__file__).parent
 
-client = OpenAI(
-    api_key=OPENAI_API_KEY,
-)
+# client = OpenAI(
+#     api_key=OPENAI_API_KEY,
+# )
 
 with open (f"{_ROOT}/image_description_promt.txt", "r") as text_file:
     image_descipcion_prompt=text_file.read()
@@ -26,18 +23,17 @@ def encode_image(image_path):
     with open(image_path, "rb") as image_file:
         return base64.b64encode(image_file.read()).decode('utf-8')
 
-# OpenAI API Key
-api_key = OPENAI_API_KEY
+
 
 # Function to get text output from OpenAI
 def text_output(base64_image):
     headers = {
         "Content-Type": "application/json",
-        "Authorization": f"Bearer {api_key}"
+        "Authorization": f"Bearer {OPENAI_API_KEY}"
     }
 
     payload = {
-        "model": "gpt-4-vision-preview",
+        "model": gpt_model,
         "messages": [
             {
                 "role": "user",
@@ -60,7 +56,7 @@ def text_output(base64_image):
             }
             
         ],
-        "max_tokens": 300
+        "max_tokens": 1000
     }
 
     response = requests.post("https://api.openai.com/v1/chat/completions", headers=headers, json=payload)
