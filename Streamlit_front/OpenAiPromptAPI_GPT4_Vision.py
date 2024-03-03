@@ -65,4 +65,6 @@ def text_output(base64_image):
 
     response = requests.post("https://api.openai.com/v1/chat/completions", headers=headers, json=payload)
 
-    return response.json()['choices'][0]['message']['content']
+    text_output = response.json()['choices'][0]['message']['content']
+
+    return text_output
