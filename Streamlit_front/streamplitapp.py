@@ -17,7 +17,7 @@ def main():
         with st.spinner('Cargando texto...'):
             # Obtener el texto de la imagen usando la API de OpenAI
             text = text_output(img_b64)
-        st.text_area("Texto resultante:", text, height=600)
+        st.text_area("Texto resultante:", text, height=400)
         return img_b64
 
 if __name__ == "__main__":
