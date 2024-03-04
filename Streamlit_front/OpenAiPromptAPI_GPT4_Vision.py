@@ -1,19 +1,12 @@
-import pandas as pd
-from openai import OpenAI
 from pathlib import Path
-import os
-from dotenv import load_dotenv
 import base64
 import requests
-load_dotenv()
+import streamlit as st
 
-OPENAI_API_KEY =  os.getenv("OPENAI_API_KEY")
+OPENAI_API_KEY = st.secrets["OPENAI_API_KEY"]
 gpt_model = "gpt-4-vision-preview"
 _ROOT = Path(__file__).parent
 
-# client = OpenAI(
-#     api_key=OPENAI_API_KEY,
-# )
 
 with open (f"{_ROOT}/image_description_promt.txt", "r") as text_file:
     image_descipcion_prompt=text_file.read()
