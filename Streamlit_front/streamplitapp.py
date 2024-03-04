@@ -5,7 +5,6 @@ from OpenAiPromptAPI_GPT4_Vision import text_output
 
 def main():
     st.title("Descripción de imágenes con OpenAI GPT-4 Vision.")
-
     img_file = st.file_uploader("Sube una imagen", type=['png', 'jpg', 'jpeg'])
 
     if img_file is not None:
