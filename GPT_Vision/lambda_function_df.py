@@ -1,13 +1,10 @@
 import pandas as pd
-from openai import OpenAI
 from pathlib import Path
-import os
-from dotenv import load_dotenv
 import sys
 # Obtén la ruta del directorio principal de tu proyecto
-project_path = "/Users/davidmolla/Data/Formacion/MBIT School/00 TFM/TrendAi_repo"
+project_path = Path(__file__).resolve().parents[1].as_posix()
 sys.path.append(project_path)
-from common.utils import load_gpt_files, initialize_openai, save_gpt_response_txt # FIX: import from common.utils  
+from common.utils import load_gpt_files, initialize_openai  # noqa: E402
 
 def get_image_responses(client, image_descipcion_prompt, df, _ROOT: str) -> list:
     responses_to_df = []
@@ -47,7 +44,9 @@ def get_image_responses(client, image_descipcion_prompt, df, _ROOT: str) -> list
                 "url": row["url"],
                 "designer": row["designer"],
                 "temporada": row["temporada"],
-                "year": row["year"]
+                "year": row["year"],
+                "tipo": row["tipo"] if "tipo" in row else None,
+                "pasarela": row["pasarela"] if "pasarela" in row else None,
             }
             responses_to_df.append(data)
             print(index, choice.message.content[:50])
@@ -59,15 +58,14 @@ def get_df_from_list(list_of_dicts: list) -> pd.DataFrame:
 
 def lambda_handler(event, context):
     _ROOT = Path(__file__).parent
-    # client = initialize_openai()
     client = initialize_openai("OPENAI_API_KEY")
-    df = pd.read_csv("vogue_season_2_reduced.csv")
+    df = pd.read_csv(f"{project_path}/data/trendai_paris_2024_reduced.csv")
     image_descipcion_prompt = load_gpt_files(_ROOT, "txt")
 
     LIST = get_image_responses(client, image_descipcion_prompt, df, _ROOT)
     df_result = get_df_from_list(LIST)
 
-    csv_filename = f"{_ROOT}/image_responses/image_responses_{pd.Timestamp.today().strftime('%Y_%m_%d_%H_%M')}.csv"
+    csv_filename = f"{project_path}/data/image_responses/image_responses_{pd.Timestamp.today().strftime('%Y_%m_%d_%H_%M')}.csv"
     df_result.to_csv(csv_filename, index=False)
 
     return {
