@@ -8,6 +8,7 @@ from selenium.webdriver.chrome.options import Options
 from pathlib import Path
 import re
 import json
+from io import StringIO
 
 # Variables globales y constante
 headers = {'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36'}
@@ -182,7 +183,7 @@ def main():
     links_to_process = verify_processed_image_inks(get_processed_links(), existing_links | new_links)
     json_data = get_images_from_links(links_to_process)
     if json_data:
-        df = pd.read_json(json_data)
+        df = pd.read_json(StringIO(json_data))
         df = process_df(df)
         df.to_csv(processed_links_file, mode="a", index=False, header=False)
     else:
