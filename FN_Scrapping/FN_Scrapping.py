@@ -11,8 +11,8 @@ import json
 from io import StringIO
 
 # Variables globales y constante
-headers = {'user-agent': """Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 
-                        (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36"""}
+headers = {'user-agent': '''Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36'''}
+
 chrome_options = Options()
 chrome_options.add_argument(f"user-agent={headers['user-agent']}")
 chrome_options.add_argument('--log-level=3')
