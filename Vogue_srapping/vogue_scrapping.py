@@ -85,7 +85,7 @@ def scrape_all_page(enlaces, scrapped_designers: list) -> list:
                 boton = soup.find_all(class_="RunwayShowPageGalleryCta-fmTQJF FtdcL")
                 # sacar el link de la pagina de imagenes
                 link = boton[0].find('a').get('href')
-                # scrape_images(link, designer_name)
+                scrape_images(link, designer_name)
                 
 
 def scrape_images(link, designer_name):
