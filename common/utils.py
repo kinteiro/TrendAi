@@ -50,7 +50,3 @@ def connect_to_s3(_ROOT: str):
     session = boto3.session.Session(**boto3keys)
     s3 = session.client('s3')
     return s3
-
-
-def upload_to_s3(s3, BUCKET_NAME: str, df: pd.DataFrame, key: str):
-    s3.put_object(Bucket=BUCKET_NAME, Key=key, Body=df.to_csv(index=False))
