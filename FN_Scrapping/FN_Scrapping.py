@@ -9,10 +9,14 @@ from pathlib import Path
 import re
 import json
 from io import StringIO
+import sys
+project_path = Path(__file__).resolve().parents[1].as_posix()
+sys.path.append(project_path)
+from common.s3_service import S3Connector
 
 # Variables globales y constante
 headers = {'user-agent': '''Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36'''}
-
+bucket = "fn-scrapping"  
 chrome_options = Options()
 chrome_options.add_argument(f"user-agent={headers['user-agent']}")
 chrome_options.add_argument('--log-level=3')
@@ -147,7 +151,7 @@ def process_df(df):
     df["designer"] =  df["designer"].map(lambda x: x[:-1].replace(" ", "") if x.startswith(" ") else x)
     df["designer"] =  df["designer"].map(lambda x: x.replace("-", " ") if len(x) > 4 else x)
     df["temporada"] = df["temporada"].map(lambda x: x.replace("/", " - "))
-    df["year"] = df["year"].map(lambda x: int(x[0:4]))
+    df["year"] = df["year"].map(lambda x: int(str(x)[0:4]) if isinstance(x, str) else x)
     return df
 
 
@@ -177,8 +181,10 @@ def procesar_linea(linea):
 
 
 def main():
-    chrome_options.add_argument('--headless')
-    processed_links_df = pd.read_csv(processed_links_file)
+    chrome_options.add_argument("--headless")
+    filename = processed_links_file.split("/")[-1]
+    s3 = S3Connector(project_path)
+    processed_links_df = s3.read_csv_from_s3(bucket, filename)
     existing_links = set(processed_links_df["page_url"])
     new_links = get_links(processed_links_df)
     links_to_process = verify_processed_image_inks(get_processed_links(), existing_links | new_links)
@@ -186,9 +192,15 @@ def main():
     if json_data:
         df = pd.read_json(StringIO(json_data))
         df = process_df(df)
-        df.to_csv(processed_links_file, mode="a", index=False, header=False)
+        combined_df = pd.concat([processed_links_df, df], ignore_index=True)
+        combined_df.to_csv(processed_links_file, index=False)
+        try:
+            s3.upload_df_to_s3(bucket, combined_df, filename)
+        except Exception as e:
+            print(f"Error al subir el archivo al bucket de S3: {e}")
     else:
         print("No hay enlaces para procesar")
+
 
 
 if __name__ == "__main__":
