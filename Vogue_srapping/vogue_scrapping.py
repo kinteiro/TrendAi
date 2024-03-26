@@ -11,6 +11,11 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import NoSuchElementException
 import sys
+project_path = Path(__file__).resolve().parents[1].as_posix()
+sys.path.append(project_path)
+from common.s3_service import S3Connector
+
+import sys
 
 # ---- Variables ----
 chrome_options = Options()
@@ -169,9 +174,11 @@ def create_df_from_page(designer_dict):
         return None
 
 
-def df_to_csv(df):
+def df_to_csv(df, s3=None):
     if df is not None:
         df.to_csv(f"{fecha_scrapped}_vogue_scrapped.csv", index=False)
+        if s3:
+            s3.upload_df_to_s3("vogue_scrapped", df, f"{fecha_scrapped}_vogue_scrapped.csv")
         print(f"Los datos se han guardado en {fecha_scrapped}_vogue_scrapped.csv")
     else:
         print("No se ha creado el DataFrame. No se puede guardar el archivo CSV.")
@@ -186,13 +193,18 @@ def main():
     try:
         scrape_all_page(enlaces, scrapped_designers)
         df = create_df_from_page(designer_dict)
-        df_to_csv(df)
+        try:
+            s3 = S3Connector(project_path)
+        except Exception as e:
+            print(f"Error al conectar con S3: {e}")
+            s3 = None
+        df_to_csv(df, s3)
         print("Scraping finalizado.")
 
     except Exception as e:
         print("Error:", e)
         df = create_df_from_page(designer_dict)
-        df_to_csv(df)
+        df_to_csv(df, s3)
         
 
     finally:
