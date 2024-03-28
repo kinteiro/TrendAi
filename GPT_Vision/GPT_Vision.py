@@ -8,7 +8,7 @@ from common.utils import load_gpt_files, initialize_openai
 from common.s3_service import S3Connector
 
 
-def get_image_responses(client, image_descipcion_prompt, df) -> list:
+def get_image_responses(client, image_descipcion_prompt, system_prompt, df) -> list:
     responses_to_df = []
 
     for index, row in df.iterrows():
@@ -30,7 +30,7 @@ def get_image_responses(client, image_descipcion_prompt, df) -> list:
                 },
                 {
                     "role": "system",
-                    "content": "Eres el mejor analista de datos experto en moda, diseño marcas de moda y telas, cuando ves una imagen describes lo que ves desde los ojos de un experto en moda, diseño marcas de moda y telas.",
+                    "content": system_prompt,
                 },
             ],
             max_tokens=1000,
@@ -65,9 +65,7 @@ def load_processed_df_for_compare(s3) -> pd.DataFrame:
 
 def compare_dfs(processed_df, raw_df) -> pd.DataFrame:
     processed_df = processed_df.groupby(["designer", "temporada", "city"]).sample(1)
-    processed_df = processed_df.sample(3) # TODO: eliminar esta línea para la carga final
     raw_df = raw_df.groupby(["designer", "temporada", "city"]).sample(1)
-    raw_df = raw_df.sample(3) # TODO: eliminar esta línea para la carga final
     return pd.concat([processed_df, raw_df]).drop_duplicates(keep=False, subset=["page_url"], ignore_index=True)
 
 def wrangling_raw_df(raw_df):
@@ -83,16 +81,19 @@ def main():
     processed_df = load_processed_df_for_compare(s3)
     raw_df = s3.read_csv_from_s3("fn-scrapping", "FN_designer_and_images.csv")
     raw_df = wrangling_raw_df(raw_df)
-    # df = pd.read_csv(f"{project_path}/data/trendai_paris_2024_reduced.csv")
     df = compare_dfs(processed_df, raw_df)
     if not df.empty:
         image_descipcion_prompt = load_gpt_files(_ROOT, "txt")
-        list_responses = get_image_responses(client, image_descipcion_prompt, df)
+        system_prompt = load_gpt_files(_ROOT, "system")
+        list_responses = get_image_responses(client, image_descipcion_prompt, system_prompt, df)
         df_result = get_df_from_list(list_responses)
         df_result = pd.concat([processed_df, df_result], ignore_index=True)
-        s3.upload_df_to_s3("gpt-responses", df_result, "GPT_Responses.csv")
-        csv_filename = f"{project_path}/data/image_responses/image_responses_{pd.Timestamp.today().strftime('%Y_%m_%d_%H_%M')}.csv"
-        df_result.to_csv(csv_filename, index=False)
+        try:
+            s3.upload_df_to_s3("gpt-responses", df_result, "GPT_Responses.csv")
+        except Exception as e:
+            print(f"--ERROR UPLOADING TO S3--\n{e}")
+            csv_filename = f"{project_path}/data/image_responses/image_responses_{pd.Timestamp.today().strftime('%Y_%m_%d_%H_%M')}.csv"
+            df_result.to_csv(csv_filename, index=False)
     else:
         print("No hay nuevas imágenes para procesar.")
 

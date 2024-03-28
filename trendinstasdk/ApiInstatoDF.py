@@ -1,10 +1,8 @@
 #### ---- IMPORTS ---- ####
 
-# import json
-# import webbrowser
-from datetime import datetime, timedelta
+from datetime import datetime
 import pandas as pd
-from instaloader import Profile, instaloader # , resumable_iteration, FrozenNodeIterator
+from instaloader import Profile, instaloader
 import logging
 logger = logging.getLogger()
 
@@ -14,7 +12,6 @@ L = instaloader.Instaloader()
 #### ---- GLOBALS ---- ####
 
 INGEST_DATE = datetime.now().strftime("%Y-%m-%d %H:%M")
-# YESTERDAY = (datetime.now() - timedelta(days=1)).strftime('%Y-%m-%d')
 
 
 #### ---- FUNCTIONS ---- ####

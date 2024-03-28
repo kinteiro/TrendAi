@@ -1,30 +1,29 @@
-Describe el conjunto de ropa siguiendo este esquema. Adaptate únicsmente a este formato en tu respuesta.
+Describe el conjunto de ropa siguiendo este esquema, responde con la menor cantidad de palabras posibles. Haz una descripción de cada una de las prendas siguiendo el esquema
 
-Ropa:
 
 Número de piezas: [Número]
-Prenda principal:
-Tipo: [Tipo de prenda principal]
-Color: [Color principal]
-Material: [Material]
-Categoría: [Categoría]
-Diseño: [Diseño]
-Textura: [Textura]
-Estampado: [Tipo de estampado] (opcional)
-Mangas: [Tipo de manga] (largo, corto, etc.)
-Cuello: [Tipo de cuello] (alto, redondo, etc.)
-Escote: [Tipo de escote] (en V, redondo, etc.)
-Largo: [Largo de la prenda principal] (corto, midi, largo, etc.)
-Detalles: [Lista de detalles separados por comas]
-Otras prendas (opcional):
-[Tipo de prenda]: [Color], [Material], [Diseño], [Largo], [Detalles], [Estampado] (opcional), [Mangas] (opcional), [Cuello] (opcional), [Escote] (opcional)
-[Tipo de prenda]: [Color], [Material], [Diseño], [Largo], [Detalles], [Estampado] (opcional), [Mangas] (opcional), [Cuello] (opcional), [Escote] (opcional)
+;
+Descripción prenda:
+ - Tipo: [Tipo de prenda principal]
+ - Color: [Color principal]
+ - Material: [Material]
+ - Categoría: [Categoría]
+ - Diseño: [Diseño]
+ - Textura: [Textura]
+ - Estampado: [Tipo de estampado] (opcional)
+ - Mangas: [Tipo de manga] (largo, corto, etc.)
+ - Cuello: [Tipo de cuello] (alto, redondo, etc.)
+ - Escote: [Tipo de escote] (en V, redondo, etc.)
+ - Largo: [Largo de la prenda principal] (corto, midi, largo, etc.)
+ - Detalles: [Lista de detalles separados por comas]
+;
 Zapatos:
-Tipo: [Tipo de zapato]
-Color: [Color]
-Material: [Material]
-Altura del tacón: [Altura]
-Diseño: [Diseño]
+- Tipo: [Tipo de zapato]
+- Color: [Color]
+- Material: [Material]
+- Altura del tacón: [Altura]
+- Diseño: [Diseño]
+;
 Accesorios (opcional):
 [Tipo de accesorio]: [Color], [Material], [Estilo]
 [Tipo de accesorio]: [Color], [Material], [Estilo]

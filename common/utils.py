@@ -33,14 +33,14 @@ def load_gpt_files(code_bucket: str, type_file: str):
     elif type_file == "txt":
         with open(f"{code_bucket}/image_description_promt.txt", "r", encoding='utf-8') as f:
             return f.read()
+    elif type_file == "system":
+        with open(f"{code_bucket}/System_description_prompt.txt", "r", encoding='utf-8') as f:
+            return f.read()
 
 def save_gpt_response_txt(code_bucket: str, response: str):
     with open(f"{code_bucket}/image_responses/image_response_{_TODAY}.txt", "w") as text_file:
         text_file.write(response)
 
-
-        #     with open (f"{_ROOT}/image_responses/image_response_{_TODAY}.txt", "w") as text_file:
-        # text_file.write(choice.message.content)
 
 def connect_to_s3(_ROOT: str):
     def openboto3keys(_ROOT: str, json_file: str = "boto3keys.local.json"):

@@ -15,11 +15,10 @@ project_path = Path(__file__).resolve().parents[1].as_posix()
 sys.path.append(project_path)
 from common.s3_service import S3Connector
 
-import sys
 
 # ---- Variables ----
 chrome_options = Options()
-# chrome_options.add_argument('--headless')
+chrome_options.add_argument('--headless')
 vogue_url = 'https://www.vogue.com'
 # main_url = 'https://www.vogue.com/fashion-shows/seasons' # Para obtener todas las temporadas
 main_url = 'https://www.vogue.com/fashion-shows/latest-shows' # Para obtener los últimos desfiles
@@ -60,14 +59,6 @@ def save_links_to_txt(enlaces, not_included):
                 and enlace not in not_included and year in enlace:
                 file.write(f"{vogue_url}{enlace}\n")
 
-
-# def get_designer_name(enlace, not_included, scrapped_designers):
-#     enlace = enlace.get('href')
-#     if year and "fashion-shows/" in enlace\
-#             and enlace not in not_included: # TODO: VER si funciona con el string
-#         designer_page = vogue_url+ enlace
-#         designer_name = enlace.split('/')[-1]
-#         return designer_page, designer_name
 
 def scrape_all_page(enlaces, scrapped_designers: list) -> list: 
     not_included = ["/fashion-shows/latest-shows", "/fashion-shows/seasons", "/fashion-shows/designers", "/fashion-shows/featured"]
