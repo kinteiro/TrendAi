@@ -1,0 +1,599 @@
+,id_url,image_response_split
+1,1,"
+Descripción prenda:
+ - Tipo: Vestido
+ - Color: Negro
+ - Material: Vinilo
+ - Categoría: Alta costura
+ - Diseño: Ajustado
+ - Textura: Brillante
+ - Estampado: Ninguno
+ - Mangas: Cortas
+ - Cuello: Alto
+ - Escote: Ninguno
+ - Largo: Mini
+ - Detalles: Volantes, perlas
+"
+5,2,"
+Descripción prenda:
+ - Tipo: Chaqueta
+ - Color: Rosa
+ - Material: Tweed
+ - Categoría: Formal
+ - Diseño: Cuadros
+ - Textura: Texturizado
+ - Estampado: Patronado
+ - Mangas: Largas
+ - Cuello: Redondo
+ - Escote: Cerrado
+ - Largo: Cropped
+ - Detalles: Lentejuelas, bordes desflecados
+"
+6,2,"
+Descripción prenda:
+ - Tipo: Falda
+ - Color: Rosa
+ - Material: Tweed
+ - Categoría: Formal
+ - Diseño: Cuadros
+ - Textura: Texturizado
+ - Estampado: Patronado
+ - Mangas: N/A
+ - Cuello: N/A
+ - Escote: N/A
+ - Largo: Rodilla
+ - Detalles: Bordes desflecados
+"
+10,3,"
+Descripción prenda:
+ - Tipo: Vestido
+ - Color: Beige
+ - Material: Tela
+ - Categoría: Formal
+ - Diseño: Capas
+ - Textura: Liso
+ - Estampado: Ninguno
+ - Mangas: Cortas
+ - Cuello: V
+ - Escote: V
+ - Largo: Midi
+ - Detalles: Cinturón
+"
+14,4,"
+Descripción prenda:
+ - Tipo: Vestido
+ - Color: Plateado
+ - Material: Lentejuelas
+ - Categoría: Alta costura
+ - Diseño: Ajustado
+ - Textura: Brillante
+ - Estampado: Ninguno
+ - Mangas: Sin
+ - Cuello: Ninguno
+ - Escote: Recto
+ - Largo: Corto
+ - Detalles: Transparente, libélula
+"
+18,5,"
+Descripción prenda:
+ - Tipo: Top
+ - Color: Blanco
+ - Material: Desconocido
+ - Categoría: Formal
+ - Diseño: Plano
+ - Textura: Lisa
+ - Estampado: Ninguno
+ - Mangas: Ninguna
+ - Cuello: Ninguno
+ - Escote: Recto
+ - Largo: Corto
+ - Detalles: Banda
+"
+19,5,"
+Descripción prenda:
+ - Tipo: Pantalón
+ - Color: Blanco
+ - Material: Desconocido
+ - Categoría: Formal
+ - Diseño: Recto
+ - Textura: Lisa
+ - Estampado: Ninguno
+ - Mangas: Ninguno
+ - Cuello: Ninguno
+ - Escote: Ninguno
+ - Largo: Largo
+ - Detalles: Cintura alta
+"
+23,6,"
+Descripción prenda:
+- Tipo: Vestido
+- Color: Multi
+- Material: Desconocido
+- Categoría: Alta costura
+- Diseño: Gráfico
+- Textura: Lisa
+- Estampado: Fotográfico
+- Mangas: Largas
+- Cuello: Redondo
+- Escote: Ninguno
+- Largo: Largo
+- Detalles: División central, ribete
+"
+27,7,"
+Descripción prenda:
+ - Tipo: Body 
+ - Color: Negro
+ - Material: Spandex
+ - Categoría: Alta-costura
+ - Diseño: Asimétrico
+ - Textura: Lisa
+ - Estampado: Ninguno
+ - Mangas: Ninguna
+ - Cuello: Ninguno
+ - Escote: Redondo
+ - Largo: Corto
+ - Detalles: Rosas
+"
+31,8,"
+Descripción prenda:
+ - Tipo: Chaqueta
+ - Color: Marfil
+ - Material: Lana
+ - Categoría: Formal
+ - Diseño: Estructurado
+ - Textura: Suave
+ - Estampado: Ninguno
+ - Mangas: Largas
+ - Cuello: Alto
+ - Escote: Ninguno
+ - Largo: Corto
+ - Detalles: Botones, bolsillos
+"
+37,9,"
+Descripción prenda:
+ - Tipo: Vestido
+ - Color: Blanco
+ - Material: Encaje
+ - Categoría: Vestir
+ - Diseño: Sastrería
+ - Textura: Bordado
+ - Estampado: Floral
+ - Mangas: Largas
+ - Cuello: Solapa
+ - Escote: V
+ - Largo: Corto
+ - Detalles: Cinturón, transparencias
+"
+41,10,"
+Descripción prenda:
+ - Tipo: Capa
+ - Color: Beige
+ - Material: Desconocido
+ - Categoría: Exterior
+ - Diseño: Liso
+ - Textura: Suave
+ - Estampado: Ninguno
+ - Mangas: Ninguna
+ - Cuello: Alto
+ - Escote: Ninguno
+ - Largo: Largo
+ - Detalles: Bordado, capucha, abertura frontal
+"
+45,11,"
+Descripción prenda:
+ - Tipo: Vestido
+ - Color: Negro
+ - Material: Lentejuelas
+ - Categoría: Vestimenta
+ - Diseño: Ajustado
+ - Textura: Brillante
+ - Estampado: Ninguno
+ - Mangas: Largas
+ - Cuello: Ilusión
+ - Escote: Corazón
+ - Largo: Midi
+ - Detalles: Plumas, transparencias
+"
+49,12,"
+Descripción prenda:
+ - Tipo: Vestido
+ - Color: Dorado
+ - Material: Metálico
+ - Categoría: Alta costura
+ - Diseño: Asimétrico
+ - Textura: Arrugado
+ - Estampado: Ninguno
+ - Mangas: Ninguna
+ - Cuello: Asimétrico
+ - Escote: Ninguno
+ - Largo: Corto
+ - Detalles: Volumen
+"
+53,13,"
+Descripción prenda:
+ - Tipo: Chaqueta
+ - Color: Multicolor
+ - Material: Seda
+ - Categoría: Exterior
+ - Diseño: Bordado
+ - Textura: Suave
+ - Estampado: Floral
+ - Mangas: Largas
+ - Cuello: Mao
+ - Escote: Ninguno
+ - Largo: Cropped
+ - Detalles: Perlas, lentejuelas
+"
+54,13,"
+Descripción prenda:
+ - Tipo: Pantalón
+ - Color: Rosado
+ - Material: Seda
+ - Categoría: Inferior
+ - Diseño: Plisado
+ - Textura: Suave
+ - Estampado: Degradado
+ - Mangas: N/A
+ - Cuello: N/A
+ - Escote: N/A
+ - Largo: Largo
+ - Detalles: Ninguno
+"
+55,13,"
+Descripción prenda:
+ - Tipo: Blusa
+ - Color: Rosado
+ - Material: Seda
+ - Categoría: Interior
+ - Diseño: Liso
+ - Textura: Suave
+ - Estampado: Ninguno
+ - Mangas: Largas
+ - Cuello: Alto
+ - Escote: Ninguno
+ - Largo: Estándar
+ - Detalles: Ninguno
+"
+59,14,"
+Descripción prenda:
+ - Tipo: Blusa
+ - Color: Negro
+ - Material: Desconocido
+ - Categoría: Formal
+ - Diseño: Asimétrico
+ - Textura: Liso
+ - Estampado: Ninguno
+ - Mangas: Ninguna
+ - Cuello: Ninguno
+ - Escote: Ninguno
+ - Largo: Irregular
+ - Detalles: Capa
+"
+60,14,"
+Descripción prenda:
+ - Tipo: Pantalón
+ - Color: Negro
+ - Material: Desconocido
+ - Categoría: Formal
+ - Diseño: Recto
+ - Textura: Liso
+ - Estampado: Ninguno
+ - Mangas: N/A
+ - Cuello: N/A
+ - Escote: N/A
+ - Largo: Largo
+ - Detalles: Ajustado
+"
+64,15,"
+Descripción prenda:
+ - Tipo: Capucha
+ - Color: Negro
+ - Material: Malla
+ - Categoría: Accesorio
+ - Diseño: Abstracto
+ - Textura: Transparente
+ - Estampado: Geométrico
+ - Mangas: N/A
+ - Cuello: N/A
+ - Escote: N/A
+ - Largo: Corto
+ - Detalles: Brillos
+"
+65,15,"
+Descripción prenda:
+ - Tipo: Pantalón
+ - Color: Dorado
+ - Material: Lentejuelas
+ - Categoría: Vestuario
+ - Diseño: Ajustado
+ - Textura: Brillante
+ - Mangas: N/A
+ - Cuello: N/A
+ - Escote: N/A
+ - Largo: Largo
+ - Detalles: Campana
+"
+69,16,"
+Descripción prenda:
+ - Tipo: Vestido
+ - Color: Blanco
+ - Material: Tul
+ - Categoría: Alta costura
+ - Diseño: Asimétrico
+ - Textura: Transparente
+ - Estampado: Ninguno
+ - Mangas: Sin
+ - Cuello: No
+ - Escote: Profundo
+ - Largo: Largo
+ - Detalles: Cinturón, plisado
+"
+73,17,"
+Descripción prenda:
+ - Tipo: Chaqueta
+ - Color: Negro
+ - Material: Desconocido
+ - Categoría: Alta costura
+ - Diseño: Asimétrico
+ - Textura: Embellecido
+ - Estampado: Ninguno
+ - Mangas: Largas
+ - Cuello: Ninguno
+ - Escote: Corto
+ - Largo: Crop
+ - Detalles: Bordado, abertura
+"
+74,17,"
+Descripción prenda:
+ - Tipo: Falda
+ - Color: Negro
+ - Material: Desconocido
+ - Categoría: Alta costura
+ - Diseño: Asimétrico
+ - Textura: Lisa
+ - Estampado: Ninguno
+ - Mangas: Ninguna
+ - Cuello: Ninguno
+ - Escote: Ninguno
+ - Largo: Largo
+ - Detalles: Abertura
+"
+78,18,"
+Descripción prenda:
+ - Tipo: Vestido
+ - Color: Negro
+ - Material: Desconocido
+ - Categoría: Formal
+ - Diseño: Asimétrico
+ - Textura: Lisa
+ - Mangas: Larga
+ - Cuello: Redondo
+ - Escote: No
+ - Largo: Largo
+ - Detalles: Abertura, Volante
+"
+82,19,"
+Descripción prenda:
+ - Tipo: Vestido
+ - Color: Negro
+ - Material: Satén
+ - Categoría: Formal
+ - Diseño: Liso
+ - Textura: Suave
+ - Estampado: Ninguno
+ - Mangas: Ninguna
+ - Cuello: Ninguno
+ - Escote: Recto
+ - Largo: Midi
+ - Detalles: Asimétrico
+"
+86,20,"
+Descripción prenda:
+ - Tipo: Vestido
+ - Color: Negro
+ - Material: Lentejuelas
+ - Categoría: Formal
+ - Diseño: Entallado
+ - Textura: Brillante
+ - Estampado: Ninguno
+ - Mangas: Largas
+ - Cuello: Alto
+ - Escote: Ninguno
+ - Largo: Largo
+ - Detalles: Lentejuelas, hombreras
+"
+90,21,"
+Descripción prenda:
+ - Tipo: Pantalón
+ - Color: Negro
+ - Material: Desconocido
+ - Categoría: Vestimenta
+ - Diseño: Sencillo
+ - Textura: Lisa
+ - Estampado: Ninguno
+ - Mangas: Ninguna
+ - Cuello: Ninguno
+ - Escote: Ninguno
+ - Largo: Largo
+ - Detalles: Cinturón
+"
+94,22,"
+Descripción prenda:
+ - Tipo: Blusa
+ - Color: Verde
+ - Material: Algodón
+ - Categoría: Casual
+ - Diseño: Asimétrico
+ - Textura: Suave
+ - Estampado: Ninguno
+ - Mangas: Cortas
+ - Cuello: Camisero
+ - Escote: Ninguno
+ - Largo: Medio
+ - Detalles: Botones, cinturón
+"
+95,22,"
+Descripción prenda:
+ - Tipo: Falda
+ - Color: Negro
+ - Material: Algodón
+ - Categoría: Casual
+ - Diseño: A-línea
+ - Textura: Suave
+ - Estampado: Ninguno
+ - Mangas: Ninguno
+ - Cuello: Ninguno
+ - Escote: Ninguno
+ - Largo: Largo
+ - Detalles: Plisado
+"
+99,23,"
+Descripción prenda:
+ - Tipo: Toga
+ - Color: Multicolor
+ - Material: Textil
+ - Categoría: Alta costura
+ - Diseño: Abstracto
+ - Textura: Irregular
+ - Estampado: Manchas
+ - Mangas: Ninguna
+ - Cuello: Drapeado
+ - Escote: Amplio
+ - Largo: Largo
+ - Detalles: Bastón, barba
+"
+103,24,"
+Descripción prenda:
+ - Tipo: Vestido
+ - Color: Marfil
+ - Material: Seda
+ - Categoría: Alta costura
+ - Diseño: Asimétrico
+ - Textura: Bordado
+ - Estampado: Floral
+ - Mangas: Sin
+ - Cuello: Halter
+ - Escote: Profundo
+ - Largo: Asimétrico
+ - Detalles: Bordados, Transparentes
+"
+107,25,"
+Descripción prenda:
+- Tipo: Vestido
+- Color: Beige
+- Material: Organza
+- Categoría: Alta costura
+- Diseño: Apliques
+- Textura: Bordado
+- Estampado: Floral
+- Mangas: Largas
+- Cuello: Alto
+- Escote: Ninguno
+- Largo: Midi
+- Detalles: Volantes, transparencias, bordados
+"
+111,26,"
+Descripción prenda:
+ - Tipo: Abrigo
+ - Color: Negro
+ - Material: Lana
+ - Categoría: Exteriores
+ - Diseño: Estructurado
+ - Textura: Lisa
+ - Estampado: Ninguno
+ - Mangas: Largas
+ - Cuello: Alto
+ - Escote: Ninguno
+ - Largo: Largo
+ - Detalles: Cinturón, bolsillos
+"
+112,26,"
+Descripción prenda:
+ - Tipo: Vestido
+ - Color: Negro
+ - Material: Desconocido
+ - Categoría: Vestimenta
+ - Diseño: Básico
+ - Textura: Lisa
+ - Estampado: Ninguno
+ - Mangas: Largas
+ - Cuello: Cubierto
+ - Escote: Ninguno
+ - Largo: Midi
+ - Detalles: Ninguno
+"
+116,27,"
+Descripción prenda:
+ - Tipo: Vestido
+ - Color: Dorado
+ - Material: Lentejuelas
+ - Categoría: Alta costura
+ - Diseño: Ajustado
+ - Textura: Brillante
+ - Estampado: Ninguno
+ - Mangas: Ninguna
+ - Cuello: Alto
+ - Escote: Ninguno
+ - Largo: Largo
+ - Detalles: Drapeado, Abertura lateral
+"
+120,28,"
+Descripción prenda:
+ - Tipo: Vestido
+ - Color: Dorado
+ - Material: Satén
+ - Categoría: Alta costura
+ - Diseño: Drapeado
+ - Textura: Lisa
+ - Estampado: Ninguno
+ - Mangas: Largas
+ - Cuello: Ninguno
+ - Escote: V
+ - Largo: Largo
+ - Detalles: Plisado, cola
+"
+124,29,"
+Descripción prenda:
+ - Tipo: Blazer
+ - Color: Borgoña
+ - Material: Lana
+ - Categoría: Formal
+ - Diseño: Oversized
+ - Textura: Lisa
+ - Estampado: Ninguno
+ - Mangas: Largas
+ - Cuello: Solapa
+ - Escote: Ninguno
+ - Largo: Largo
+ - Detalles: Ninguno
+"
+125,29,"
+Descripción prenda:
+ - Tipo: Pantalón
+ - Color: Rosa
+ - Material: Sintético
+ - Categoría: Formal
+ - Diseño: Recto
+ - Textura: Lisa
+ - Estampado: Ninguno
+ - Mangas: Ninguno
+ - Cuello: Ninguno
+ - Escote: Ninguno
+ - Largo: Largo
+ - Detalles: Pliegues
+"
+126,29,"
+Descripción prenda:
+ - Tipo: Top
+ - Color: Rosa
+ - Material: Plumaje
+ - Categoría: Glamour
+ - Diseño: Crop
+ - Textura: Plumosa
+ - Estampado: Ninguno
+ - Mangas: Ninguno
+ - Cuello: Ninguno
+ - Escote: Ninguno
+ - Largo: Corto
+ - Detalles: Plumas
+"

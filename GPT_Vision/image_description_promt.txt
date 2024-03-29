@@ -1,0 +1,29 @@
+Describe el conjunto de ropa siguiendo este esquema, responde con la menor cantidad de palabras posibles. Haz una descripción de cada una de las prendas siguiendo el esquema
+
+
+Número de piezas: [Número]
+;
+Descripción prenda:
+ - Tipo: [Tipo de prenda principal]
+ - Color: [Color principal]
+ - Material: [Material]
+ - Categoría: [Categoría]
+ - Diseño: [Diseño]
+ - Textura: [Textura]
+ - Estampado: [Tipo de estampado] (opcional)
+ - Mangas: [Tipo de manga] (largo, corto, etc.)
+ - Cuello: [Tipo de cuello] (alto, redondo, etc.)
+ - Escote: [Tipo de escote] (en V, redondo, etc.)
+ - Largo: [Largo de la prenda principal] (corto, midi, largo, etc.)
+ - Detalles: [Lista de detalles separados por comas]
+;
+Zapatos:
+- Tipo: [Tipo de zapato]
+- Color: [Color]
+- Material: [Material]
+- Altura del tacón: [Altura]
+- Diseño: [Diseño]
+;
+Accesorios (opcional):
+[Tipo de accesorio]: [Color], [Material], [Estilo]
+[Tipo de accesorio]: [Color], [Material], [Estilo]
